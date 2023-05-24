@@ -1,6 +1,8 @@
 // filter by location
 const parkByLocation = document.getElementById("parksByLocation");
-const parkByType = document.getElementById("parksByType")
+const parkByType = document.getElementById("parksByType");
+const 
+
  
 // iterate through location array from locationData.js file
 for (let i=0; i<locationsArray.length; i++){
@@ -20,3 +22,10 @@ for (let i=0; i<locationsArray.length; i++){
     parkByType.appendChild(option);
  }
 
+//  Display parks information 
+function displayParks(park){
+    FileList.innerHTML
+}
+parkByLocation.addEventListener("change", ()=>{
+    let select
+})
