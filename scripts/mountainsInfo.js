@@ -17,12 +17,12 @@ for (let i = 0; i <= 10; i++) {
 
   console.log(mountain)
   // fetch mountain info and display in card
-  let mountainCard = builMountainCard(mountain);
+  let mountainCard = buildMountainCard(mountain);
   mountainsCards.appendChild(mountainCard);
 }
 
 // build card function
-function builMountainCard(mountain) {
+function buildMountainCard(mountain) {
   let divCol = document.createElement("div");
   divCol.innerHTML = `
     <div class="col">
@@ -39,3 +39,16 @@ function builMountainCard(mountain) {
 
   return divCol;
 }
+
+// display only chosen mountain from dropdown
+mountains.addEventListener("change", () => {
+  let selectedMountain = mountains.selectedOptions[0].value;
+  mountainsCards.innerHTML = "";
+
+  if (selectedMountain != "anyChosenMountain") {
+    let mountain = mountainsArray.find(m => m.name.toLowerCase() === selectedMountain.toLowerCase())
+
+    let mountainCard = buildMountainCard(mountain)
+    mountainsCards.appendChild(mountainCard)
+  }
+})
