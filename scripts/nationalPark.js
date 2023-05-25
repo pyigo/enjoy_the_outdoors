@@ -26,9 +26,9 @@ for (let i = 0; i < parkTypesArray.length; i++) {
 
 //  Build card on page load to show 10 parks
 for (let i = 0; i <= 10; i++) {
-    console.log(i)
+
     let park = nationalParksArray[i]
-    console.log(park)
+    // console.log(park)
 
     // grab park info to display in card
     let parkCard = buildParkCard(park);
@@ -58,17 +58,6 @@ function buildParkCard(park) {
 // parkByLocation.addEventListener("change", ()=>{
 //     let selectedPark = parkByLocation.selectedOptions[0].value;
 //     listOfParks.innerHTML="";
-//     let parks = nationalParksArray.filter(park => park.State.toLocaleLowerCase() === selectedPark.toLocaleLowerCase())
-//     parks.forEach(park=>{
-//         return buildParkCard(park);
-        
-//     })
-// })
-
-
-// parkByLocation.addEventListener("change", ()=>{
-//     let selectedPark = parkByLocation.selectedOptions[0].value;
-//     listOfParks.innerHTML="";
 //     let park= nationalParksArray.forEach(park=>{
 //         if(contains(selectedPark, park.State)){
 //             parkCard(park);
@@ -76,16 +65,54 @@ function buildParkCard(park) {
 //     })
 // })
 
-parkByLocation.addEventListener("change", ()=>{
-    let selectedPark = parkByLocation.selectedOptions[0].value;
-    listOfParks.innerHTML="";
-    let parks = nationalParksArray
-    if(selectedPark != "anyChosenValue"){
-        parks = parks.filter(park=>park.State.toLowerCase()===selectedPark.toLowerCase())
+parkByLocation.addEventListener("change", () => {
+    let selectedState = parkByLocation.selectedOptions[0].value;
+    listOfParks.innerHTML = "";
+    let parks = nationalParksArray;
+    if (selectedState != "anyChosenValue") {
+        parks = parks.filter(park => park.State.toLowerCase() === selectedState.toLowerCase())
     }
-    parks.forEach(park=>{
+    parks.forEach(park => {
         // grab park info to display in card
-    let parkCard = buildParkCard(park);
-    listOfParks.appendChild(parkCard);
+        let parkCard = buildParkCard(park);
+        listOfParks.appendChild(parkCard);
     })
 })
+
+// filter by type
+parkByType.addEventListener("change", () => {
+    let selectedType = parkByType.selectedOptions[0].value;
+    listOfParks.innerHTML = "";
+
+    let parks = nationalParksArray;
+    let parksByType = []; //empty array before we get results from seleted type
+    parks.forEach(park => {
+        if (contains(selectedType, park.LocationName)) {
+            parksByType.push(park) //populate empty array with result from selected type
+        }
+    })
+
+    parksByType.forEach(park => {
+        // grab park info to display in card
+        let parkCard = buildParkCard(park);
+        listOfParks.appendChild(parkCard);
+    })
+
+})
+
+// Kevin's function contains
+function contains(needle, haystack) {
+    const NOT_FOUND = -1;
+    let doesContain = true
+
+    needle = needle.toLowerCase();
+    haystack = haystack.toLowerCase();
+
+    index = haystack.indexOf(needle);
+
+    if (index == NOT_FOUND) {
+        doesContain = false;
+    }
+
+    return doesContain;
+}
