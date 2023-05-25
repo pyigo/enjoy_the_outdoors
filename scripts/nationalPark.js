@@ -1,7 +1,9 @@
-// filter by location
+//  by location
+
+
 const parkByLocation = document.getElementById("parksByLocation");
 const parkByType = document.getElementById("parksByType");
-const 
+const listOfParks= document.getElementById("ListOfParks");
 
  
 // iterate through location array from locationData.js file
@@ -22,10 +24,20 @@ for (let i=0; i<locationsArray.length; i++){
     parkByType.appendChild(option);
  }
 
-//  Display parks information 
-function displayParks(park){
-    FileList.innerHTML
+//  Build card on page load
+for(let i=0; i<=10; i++){
+    console.log(i)
+   let park = nationalParksArray[i]
+   console.log(park)
 }
-parkByLocation.addEventListener("change", ()=>{
-    let select
-})
+
+//  Display parks information 
+function displayParks(){
+   
+};
+
+// filter 
+// function filterByLocation(){
+//     let 
+// }
+
