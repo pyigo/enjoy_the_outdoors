@@ -1,3 +1,9 @@
+body {
+    background-color: #BDB76C;
+}
+.card{
+    background-color: #BDB76C;
+}
 nav img{
     position: absolute;
     left: 3px;
