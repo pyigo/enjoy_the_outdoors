@@ -31,24 +31,12 @@ for (let i = 0; i <= 10; i++) {
     console.log(park)
 
     // grab park info to display in card
-    let parkCard = buildParkCard(park)
-    listOfParks.appendChild(parkCard)
+    let parkCard = buildParkCard(park);
+    listOfParks.appendChild(parkCard);
 }
 
 // build card function
 function buildParkCard(park) {
-    // <div class="col">
-    //  <div class="card">
-    //   <div class="card-body">
-    //     <h5 class="card-title">Name</h5>
-    //     <h5 class="card-title">Address</h5>
-    //     <h5 class="card-title">City, State, Zip</h5>
-    //     <h5 class="card-title">Phone</h5>
-    //     <a href="#" class="btn btn-primary">visit</a>
-    //   </div>
-    // </div>
-    // </div>
-
     let divCol = document.createElement("div");
     divCol.innerHTML = `
     <div class="col">
@@ -58,7 +46,7 @@ function buildParkCard(park) {
        <h5 class="card-title">${park.Address}</h5>
        <h5 class="card-title">${park.City}, ${park.State}, ${park.ZipCode}</h5>
        <h5 class="card-title">${park.Phone}</h5>
-       <a href="${park.Visit ?  park.Visit: "#"  }" class="btn btn-primary">${park.Visit ? "Go to site": "No link"}</a>
+       <a href="${park.Visit ? park.Visit : "#"}" class="btn btn-primary">${park.Visit ? "Go to site" : "No link"}</a>
      </div>
    </div>
    </div>`
@@ -66,13 +54,38 @@ function buildParkCard(park) {
     return divCol;
 }
 
-//  Display parks information 
-function displayParks() {
+// filter park by search by location
+// parkByLocation.addEventListener("change", ()=>{
+//     let selectedPark = parkByLocation.selectedOptions[0].value;
+//     listOfParks.innerHTML="";
+//     let parks = nationalParksArray.filter(park => park.State.toLocaleLowerCase() === selectedPark.toLocaleLowerCase())
+//     parks.forEach(park=>{
+//         return buildParkCard(park);
+        
+//     })
+// })
 
-};
 
-// filter 
-// function filterByLocation(){
-//     let 
-// }
+// parkByLocation.addEventListener("change", ()=>{
+//     let selectedPark = parkByLocation.selectedOptions[0].value;
+//     listOfParks.innerHTML="";
+//     let park= nationalParksArray.forEach(park=>{
+//         if(contains(selectedPark, park.State)){
+//             parkCard(park);
+//         }
+//     })
+// })
 
+parkByLocation.addEventListener("change", ()=>{
+    let selectedPark = parkByLocation.selectedOptions[0].value;
+    listOfParks.innerHTML="";
+    let parks = nationalParksArray
+    if(selectedPark != "anyChosenValue"){
+        parks = parks.filter(park=>park.State.toLowerCase()===selectedPark.toLowerCase())
+    }
+    parks.forEach(park=>{
+        // grab park info to display in card
+    let parkCard = buildParkCard(park);
+    listOfParks.appendChild(parkCard);
+    })
+})
