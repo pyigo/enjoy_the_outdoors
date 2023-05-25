@@ -1,6 +1,4 @@
 //  by location
-
-
 const parkByLocation = document.getElementById("parksByLocation");
 const parkByType = document.getElementById("parksByType");
 const listOfParks = document.getElementById("ListOfParks");
@@ -54,17 +52,7 @@ function buildParkCard(park) {
     return divCol;
 }
 
-// filter park by search by location
-// parkByLocation.addEventListener("change", ()=>{
-//     let selectedPark = parkByLocation.selectedOptions[0].value;
-//     listOfParks.innerHTML="";
-//     let park= nationalParksArray.forEach(park=>{
-//         if(contains(selectedPark, park.State)){
-//             parkCard(park);
-//         }
-//     })
-// })
-
+// filter park by location
 parkByLocation.addEventListener("change", () => {
     let selectedState = parkByLocation.selectedOptions[0].value;
     listOfParks.innerHTML = "";
@@ -79,7 +67,7 @@ parkByLocation.addEventListener("change", () => {
     })
 })
 
-// filter by type
+// filter parks by type
 parkByType.addEventListener("change", () => {
     let selectedType = parkByType.selectedOptions[0].value;
     listOfParks.innerHTML = "";
