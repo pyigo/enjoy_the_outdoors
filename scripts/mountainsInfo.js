@@ -32,7 +32,7 @@ function buildMountainCard(mountain) {
        <h5 class="card-title">${mountain.name}</h5>
        <h5 class="card-title">Elevation: ${mountain.elevation}, Effort: ${mountain.effort}</h5>
        <p class="card-text">${mountain.desc}</p>
-       <h5 class="card-title">${mountain.coords.lat} ${mountain.coords.lng}</h5>
+       <h5 class="card-title">${mountain.effort}</h5>
        <a href="#" class="btn btn-primary">Learn more</a>
      </div>
    </div>
