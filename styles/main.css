@@ -42,3 +42,9 @@ nav img{
     text-decoration: none;
     color: #ff9900;
 }
+
+.footer-bottom{
+    position: absolute;
+    display: flex;
+    background-color: #000000;
+}
