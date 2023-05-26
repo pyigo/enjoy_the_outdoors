@@ -1,18 +1,22 @@
 body {
     background-color: #BDB76C88;
 }
+.imageToStyle{
+    overflow: hidden;
+}
+
 .btn-primary{
     background-color: #ff9900;
     color:black
 }
-#bgImage{
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fpark%2F&psig=AOvVaw326t4eYgIUi9LGPITt5QEX&ust=1685154035497000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjEyY_2kf8CFQAAAAAdAAAAABAE");
-}
-/* .card{
+
+.card{
     background-color: #BDB76C;
-} */
+}
 
 .card :hover{
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+    /* transform: translateY(-5px); */
    
 }
 nav img{

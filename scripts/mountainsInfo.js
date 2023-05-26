@@ -53,3 +53,19 @@ mountains.addEventListener("change", () => {
     mountainsCards.appendChild(mountainCard)
   }
 })
+
+
+// function that can "fetch" the sunrise/sunset times
+// async function getSunsetForMountain(lat, lng){
+//   let response = await fetch(
+//   `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+//   let data = await response.json();
+//   return data;
+//   }
+
+//   // Fetch the sunset/sunrise times for a specific mountain
+// getSunsetForMountain(44.320686, -71.291742).then(data => {
+//   console.log(data.results)
+//   });
+
+  // event Handler display longitute and latitude
