@@ -104,3 +104,9 @@ function contains(needle, haystack) {
 
     return doesContain;
 }
+
+// search box
+// parkByLocation.addEventListener("change",()=>{
+//     let searchedPark= document.getElementsByName("input")
+// })
+
