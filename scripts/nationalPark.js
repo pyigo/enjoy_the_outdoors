@@ -41,10 +41,10 @@ function buildParkCard(park) {
     <div class="card">
      <div class="card-body">
        <h5 class="card-title">${park.LocationName}</h5>
-       <h5 class="card-title">${park.Address}</h5>
-       <h5 class="card-title">${park.City}, ${park.State}, ${park.ZipCode}</h5>
-       <h5 class="card-title">${park.Phone}</h5>
-       <a href="${park.Visit ? park.Visit : "#"}" class="btn btn-primary">${park.Visit ? "Go to site" : "No link"}</a>
+       <p class="card-text">${park.Address}</p>
+       <p class="card-text">${park.City}, ${park.State}, ${park.ZipCode}</p>
+       <p class="card-text">${park.Phone}</p>
+       <a href="${park.Visit ? park.Visit : "#"}" class="btn btn-primary">${park.Visit ? "Visit site" : "No link"}</a>
      </div>
    </div>
    </div>`
