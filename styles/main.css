@@ -16,7 +16,6 @@ body {
 
 .card :hover{
     box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-    /* transform: translateY(-5px); */
    
 }
 nav img{
@@ -26,18 +25,20 @@ nav img{
 }
 
  .explore{
-   line-height: 1.3em;
-   z-index: 9999;
+    z-index: 9999; 
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
    background-color: #000000;
    color: #ffffff;
    padding: 12px 24px;
    font-size: 20px;
    font-weight: bold;
-   border-radius: 50px;
    transition: all .5s ease;
+}
+
+.exploreLink{
+    text-decoration: none;
+    color: #ff9900;
 }

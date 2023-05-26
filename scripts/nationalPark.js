@@ -44,7 +44,7 @@ function buildParkCard(park) {
        <p class="card-text">${park.Address}</p>
        <p class="card-text">${park.City}, ${park.State}, ${park.ZipCode}</p>
        <p class="card-text">${park.Phone}</p>
-       <a href="${park.Visit ? park.Visit : "#"}" class="btn btn-primary">${park.Visit ? "Visit site" : "No link"}</a>
+       <a href="${park.Visit ? park.Visit : "#"}" class="btn btn-primary">${park.Visit ? "Visit site" : "Visit"}</a>
      </div>
    </div>
    </div>`
